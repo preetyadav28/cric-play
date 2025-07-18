@@ -1,0 +1,250 @@
+[
+  {
+    "name": "Chennai Super Kings",
+    "alias": "CSK",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/csk.svg"
+  },
+  {
+    "name": "Mumbai Indians",
+    "alias": "MI",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/mi.svg"
+  },
+  {
+    "name": "Royal Challengers Bengaluru",
+    "alias": "RCB",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "Royal Challengers Bangalore",
+    "logo": "../backend/src/assets/rcb.svg"
+  },
+  {
+    "name": "Kolkata Knight Riders",
+    "alias": "KKR",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/kkr.svg"
+  },
+  {
+    "name": "Sunrisers Hyderabad",
+    "alias": "SRH",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/srh.svg"
+  },
+  {
+    "name": "Delhi Capitals",
+    "alias": "DC",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "Delhi Daredevils",
+    "logo": "../backend/src/assets/dc.svg"
+  },
+  {
+    "name": "Rajasthan Royals",
+    "alias": "RR",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/rr.svg"
+  },
+  {
+    "name": "Punjab Kings",
+    "alias": "PBKS",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "Kings XI Punjab",
+    "logo": "../backend/src/assets/pbks.svg"
+  },
+  {
+    "name": "Lucknow Super Giants",
+    "alias": "LSG",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/lsg.svg"
+  },
+  {
+    "name": "Gujarat Titans",
+    "alias": "GT",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/gt.svg"
+  },
+  {
+    "name": "Gujarat Lions",
+    "alias": "GL",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/gl.png"
+  },
+  {
+    "name": "Rising Pune Supergiant",
+    "alias": "RPS",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "Rising Pune Supergiants",
+    "logo": "../backend/src/assets/rps.png"
+  },
+  {
+    "name": "Pune Warriors India",
+    "alias": "PWI",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/pwi.jpg"
+  },
+  {
+    "name": "Kochi Tuskers Kerala",
+    "alias": "KTK",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/ktk.svg"
+  },
+  {
+    "name": "Deccan Chargers",
+    "alias": "DC (Deccan)",
+    "type": "Men",
+    "level": "IPL",
+    "other_name": "",
+    "logo": "../backend/src/assets/deccan.svg"
+  },
+  {
+    "name": "India",
+    "alias": "IND",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/ind.svg"
+  },
+  {
+    "name": "Australia",
+    "alias": "AUS",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/aus.svg"
+  },
+  {
+    "name": "England",
+    "alias": "ENG",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/eng.svg"
+  },
+  {
+    "name": "New Zealand",
+    "alias": "NZ",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/nz.svg"
+  },
+  {
+    "name": "South Africa",
+    "alias": "RSA",
+    "type": "Men",
+    "level": "International",
+    "other_name": "SA",
+    "logo": "../backend/src/assets/rsa.svg"
+  },
+  {
+    "name": "Sri Lanka",
+    "alias": "SL",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/sl.svg"
+  },
+  {
+    "name": "Bangladesh",
+    "alias": "BAN",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/ban.svg"
+  },
+  {
+    "name": "West Indies",
+    "alias": "WI",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/wi.svg"
+  },
+  {
+    "name": "Afghanistan",
+    "alias": "AFG",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/afg.svg"
+  },
+  {
+    "name": "Zimbabwe",
+    "alias": "ZIM",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/zim.svg"
+  },
+  {
+    "name": "Ireland",
+    "alias": "IRE",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/ire.svg"
+  },
+  {
+    "name": "United Arab Emirates",
+    "alias": "UAE",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/uae.svg"
+  },
+  {
+    "name": "Netherlands",
+    "alias": "NED",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/ned.svg"
+  },
+  {
+    "name": "Namibia",
+    "alias": "NAM",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/nam.svg"
+  },
+  {
+    "name": "United States of America",
+    "alias": "USA",
+    "type": "Men",
+    "level": "International",
+    "other_name": "United States",
+    "logo": "../backend/src/assets/usa.svg"
+  },
+  {
+    "name": "Nepal",
+    "alias": "NEP",
+    "type": "Men",
+    "level": "International",
+    "other_name": "",
+    "logo": "../backend/src/assets/nep.svg"
+  }
+]
