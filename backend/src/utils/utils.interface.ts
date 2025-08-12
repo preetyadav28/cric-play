@@ -22,3 +22,14 @@ export interface IFetchPlayerResponse {
    teams: string[];
    profileImage: string;
 }
+
+export interface ICreatePlayerParams {
+   START_ID: number;
+   END_ID: number;
+}
+
+export interface INewGameWithSolutions {
+   teams: number[];
+   teamData: any[];
+   teamPlayersMap: any;
+}

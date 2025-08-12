@@ -1,9 +1,10 @@
 import multer from "multer";
 import multerS3 from "multer-s3";
 import axios from "axios";
-import s3 from "../utils/s3";
 import { v4 as uuid } from 'uuid';
 import { PutObjectCommand } from "@aws-sdk/client-s3";
+import s3 from "../utils/s3";
+import { AWS_COMMON_URL } from "../utils/Constants";
 
 const upload = multer({
    storage: multerS3({
@@ -29,7 +30,7 @@ export const uploadImageFromUrl = async (imageUrl: string): Promise<string | nul
       })
     );
 
-    return `https://cric-play.s3.amazonaws.com/${fileName}`;
+    return `${AWS_COMMON_URL}${fileName}`;
   } catch (err) {
     console.error('Error uploading profile image:', err);
     return null;

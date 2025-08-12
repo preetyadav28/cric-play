@@ -1,4 +1,4 @@
-import express, { RequestHandler } from 'express';
+import express from 'express';
 import Team from '../models/team.model';
 import upload from '../middleware/upload';
 

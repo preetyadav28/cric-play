@@ -1,30 +1,15 @@
 import * as cheerio from "cheerio";
-import { Month } from "./utils.interface";
+import axios from "axios";
+import { IFetchPlayerResponse } from "./utils.interface";
+import { CRICBUZZ_BASE_URL } from "./Constants";
+import { ICreatePlayerParams, Month } from "./utils.interface";
 import Player from "../models/player.model";
-import { fetchPlayer } from "./fetchPlayerFromHtml";
 import Team from "../models/team.model";
 import { uploadImageFromUrl } from "../middleware/upload";
+import { MONTH_MAPPING, PROFILE_TAG_TITLE } from "./Constants";
 
-const PROFILE_TAG_TITLE = "profile image";
-
-const monthMapping: Record<Month, string> = {
-   January: "01",
-   February: "02",
-   March: "03",
-   April: "04",
-   May: "05",
-   June: "06",
-   July: "07",
-   August: "08",
-   September: "09",
-   October: "10",
-   November: "11",
-   December: "12",
-};
-
-export function getPlayerDetails(html: string) {
+function getPlayerDetails(html: string) {
    const $ = cheerio.load(html);
-
    const name = $('h1[itemprop="name"].cb-font-40').text().trim();
    const country = $("h3.cb-font-18.text-gray").text().trim();
 
@@ -33,9 +18,9 @@ export function getPlayerDetails(html: string) {
       (_, el) => $(el).text().trim() === "Born"
    );
    if (bornLabel.length > 0) {
-      const dobText = bornLabel.next().text().trim().split("(")[0].trim(); // Remove age part
+      const dobText = bornLabel.next().text().trim().split("(")[0].trim();
       const [month, date, year] = dobText.split(" ");
-      dob = `${date.slice(0, 2)}/${monthMapping[month as Month]}/${year}`;
+      dob = `${date?.slice(0, 2)}/${MONTH_MAPPING[month as Month]}/${year}`;
    }
 
    const birthPlace = $("div.cb-col.cb-col-40.text-bold.cb-lst-itm-sm")
@@ -64,15 +49,39 @@ export function getPlayerDetails(html: string) {
    return {
       name,
       country,
-      dob,
+      dob: dob ?? "no dob",
       birthPlace,
       role,
       teams,
-      profileImage,
+      profileImage: profileImage?.includes("182026") ? "" : profileImage,
    };
+};
+
+async function fetchPlayer (id: number): Promise<IFetchPlayerResponse> {
+   try {
+      const { data: response } = await axios.get(`${CRICBUZZ_BASE_URL}/${id}`);
+      const { name, country, dob, birthPlace, role, teams, profileImage } =
+         getPlayerDetails(response);
+
+      if (!name) return {} as IFetchPlayerResponse;
+
+      return {
+         playerId: id,
+         name,
+         country,
+         dob,
+         birthPlace,
+         role,
+         teams,
+         profileImage,
+      };
+   } catch (error) {
+      console.log("🚀 ~ fetchPlayer ~ error:", error);
+      return {} as IFetchPlayerResponse;
+   }
 }
 
-export async function syncPlayer(START_ID: number, END_ID: number) {
+export async function createPlayer({START_ID, END_ID}: ICreatePlayerParams) {
    let result = {};
    for (let id = START_ID; id <= END_ID; id++) {
       const existing = await Player.findOne({ playerId: id });
@@ -93,20 +102,20 @@ export async function syncPlayer(START_ID: number, END_ID: number) {
       }
 
       if (!player || Object.keys(player).length === 0) continue;
-
-      const imageUrl = await uploadImageFromUrl(profileImage as string);
+      let imageUrl = "";
+      if (profileImage) {
+         imageUrl = (await uploadImageFromUrl(profileImage as string)) || "";
+      }
 
       await Player.create({
          ...player,
-         profileImage: imageUrl || "",
+         profileImage: imageUrl || "dummy",
          teams: teamIds,
       });
 
       result = { ...result, [id]: "Added" };
-
-      console.log(`✅ Added: ${player.name} (ID: ${id})`);
    }
 
    console.log("🏁 Done.");
    return result;
-}
+};
